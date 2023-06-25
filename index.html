@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Gasit85518@aramask.com</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<button onclick="a()"> Press it to Earn MS Rewards </button>
+<script>
+  // Generate a random search term
+function generateSearchTerm() {
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  var searchTerm = "";
+
+  // Generate a random search term of length 5
+  for (var i = 0; i < 5; i++) {
+    var randomIndex = Math.floor(Math.random() * alphabet.length);
+    searchTerm += alphabet[randomIndex];
+  }
+
+  return searchTerm;
+}
+
+// Generate an array of random search terms
+function generateSearchTermsArray(length) {
+  var searchTerms = [];
+
+  for (var i = 0; i < length; i++) {
+    var searchTerm = generateSearchTerm();
+    searchTerms.push(searchTerm);
+  }
+
+  return searchTerms;
+}
+
+// Function to open search results after a delay
+function openSearchResults() {
+  var searchTerms = generateSearchTermsArray(30);
+
+  searchTerms.forEach(function(term) {
+    // Create the URL for the search term
+    var url = "https://www.bing.com/search?q=" + encodeURIComponent(term);
+
+    // Open search results in a new tab or window after 3 seconds
+    setTimeout(function() {
+      window.open(url);
+    }, 3000); // 3000 milliseconds = 3 seconds
+  });
+}
+
+// Call the function to open search results after a delay
+openSearchResults();
+</script>
+<style>
+  body {
+  font-family: system-ui;
+  background: #f06d06;
+  color: white;
+  text-align: center;
+}
+</style>
+<!-- partial -->
+  
+</body>
+</html>
