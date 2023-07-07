@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<button onclick="a()"> Press it to Earn MS Rewards </button>
+<button onclick="openSearchResults()"> Press it to Earn MS Rewards </button>
 <script>
   // Generate a random search term
 function generateSearchTerm() {
@@ -46,13 +46,11 @@ function openSearchResults() {
 
     // Open search results in a new tab or window after 3 seconds
     setTimeout(function() {
-      window.open(url);
-    }, 3000); // 3000 milliseconds = 3 seconds
+      window.open(url.'_blank').focus();
+    }, 1000); // 3000 milliseconds = 3 seconds
   });
 }
 
-// Call the function to open search results after a delay
-openSearchResults();
 </script>
 <style>
   body {
